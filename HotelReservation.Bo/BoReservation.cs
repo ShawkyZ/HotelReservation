@@ -57,24 +57,22 @@ namespace HotelReservation.Bo
             Repository.Update(reservation);
         }
 
-        
-        /* Browse reservation dummy logic
-        public IEnumerable<DtoReservation> Browse(DtoReservationStatus reservationStatus)
+        public IEnumerable<DtoReservation> BrowseForReservation(DtoReservationStatus reservationStatus)
         {
-           
+            return Repository.Get(x => x.GetCurrentStatus().Equals(reservationStatus)).ToList();
         }
-        public IEnumerable<DtoReservation> Browse(DateTime arrivalDateFrom)
+        public IEnumerable<DtoReservation> BrowseForArrivalDate(DateTime? arrivalDateFrom = null, DateTime? arrivalDateTo = null)
         {
+            if (arrivalDateFrom.HasValue)
+                return Repository.Get(x => x.ArrivalDate >= arrivalDateFrom);
+            if(arrivalDateTo.HasValue)
+                return Repository.Get(x => x.ArrivalDate <= arrivalDateTo);
+            throw new ArgumentException("No arrival dates provided");
+        }
+        public IEnumerable<DtoReservation> BrowseForGuest(DtoGuest guest)
+        {
+            return Repository.Get(x=>x.Guest.Equals(guest)).ToList();
+        }
 
-        }
-        public IEnumerable<DtoReservation> Browse(DateTime arrivalDateTo)
-        {
-
-        }
-        public IEnumerable<DtoReservation> Browse(DtoGuest guest)
-        {
-
-        }
-        */
     }
 }
