@@ -7,20 +7,26 @@ namespace HotelReservation.Bo
 {
     public class BoReservation : BoBase<DtoReservation>
     {
-        public DtoReservation Book(DtoGuest dtoGuest, DtoRoom dtoRoom, DateTime arrivalData, DateTime departureDate)
+        public DtoReservation Book(DtoGuest dtoGuest, string roomNumber, DateTime arrivalData, DateTime departureDate)
         {
             // roles: 
             // number of days must be more than number of cancelation days fees
+            var dtoRoom = UnitOfWork.RepositoryFor<DtoRoom>().Get(x => x.Number == roomNumber).SingleOrDefault();
+            if(dtoRoom == null)
+                throw new ArgumentException("No room with the incoming number");
+            if(arrivalData >= departureDate)
+                throw new ArgumentException("Arrival date can't be greater than Departure Date");
             var dtoReservation = new DtoReservation
             {
                 ArrivalDate = arrivalData,
                 DepartureDate = departureDate,
                 Guest = dtoGuest,
-                Room = dtoRoom,
+                Room = dtoRoom
             };
             var deoositFees =  100 / (dtoReservation.Room.RoomType.DepositFeePercentage);
             dtoReservation.AddReservationStatus(new DtoReservationStatus{ReservationStatus = ReservationStatus.Booked, Fees = deoositFees});
             Repository.Insert(dtoReservation);
+            UnitOfWork.SaveChanges();
             return dtoReservation;
         }
         public void Checkout(DtoReservation reservation)

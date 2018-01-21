@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using HotelReservation.Bo;
+using HotelReservation.Models;
 using HotelReservation.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
 
@@ -26,9 +27,10 @@ namespace HotelReservation.API.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]DtoReservation value)
+        public void Post([FromBody]PrxReservation value)
         {
-           
+            var guest = new BoGuest().Create(value.GuestName, value.GuestEmail, value.GuestPhone);
+            reservationBo.Book(guest, value.RoomNumber, value.ArrivalDate, value.DepartureDate);
         }
 
         [HttpPost("{id}/cancel")]

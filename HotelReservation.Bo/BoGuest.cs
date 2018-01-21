@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using HotelReservation.Models.Entities;
 
 namespace HotelReservation.Bo
@@ -7,6 +8,9 @@ namespace HotelReservation.Bo
     {
         public DtoGuest Create(string name, string email, string phone)
         {
+            var existedGuest = Repository.Get(x => x.Email == email && x.Name == name).SingleOrDefault();
+            if (existedGuest != null)
+                return existedGuest;
             var dtoGuest = new DtoGuest
             {
                 Name = name,

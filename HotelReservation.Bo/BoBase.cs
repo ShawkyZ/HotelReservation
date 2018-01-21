@@ -7,12 +7,12 @@ namespace HotelReservation.Bo
     {
         public UnityContainer UnityContainer;
         public IRepository<TEntity> Repository;
-        private IUnitOfWork uof;
+        public IUnitOfWork UnitOfWork;
         public BoBase()
         {
             UnityContainer = UnityConfiguration.Container;
-            uof = UnityContainer.Resolve<IUnitOfWork>();
-            Repository = uof.RepositoryFor<TEntity>();
+            UnitOfWork = UnityContainer.Resolve<IUnitOfWork>();
+            Repository = UnitOfWork.RepositoryFor<TEntity>();
         }
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace HotelReservation.Models.Entities
 {
@@ -18,6 +19,11 @@ namespace HotelReservation.Models.Entities
             if (ReservationStatusList.Contains(reservationStatus))
                 return;
             ReservationStatusList.Add(reservationStatus);
+        }
+
+        public DtoReservationStatus GetCurrentStatus()
+        {
+            return ReservationStatusList.OrderByDescending(x => x.CreatedOn).First();
         }
     }
 }
