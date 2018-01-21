@@ -1,58 +1,133 @@
 ﻿using System;
-using System.Collections.Generic;
 using HotelReservation.Bo;
 using HotelReservation.Models;
-using HotelReservation.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HotelReservation.API.Controllers
 {
-    [Route("api/reservation")]
+    [Route("api/Reservation")]
     public class ReservationController : Controller
     {
-        BoReservation reservationBo = new BoReservation();
-        // GET api/values
+        private readonly BoReservation _reservationBo;
+        private readonly BoGuest _guestBo;
+        public ReservationController()
+        {
+            _reservationBo = new BoReservation();
+            _guestBo = new BoGuest();
+        }
+
+        // GET api/Reservation
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get(DateTime? arrivalDateFrom = null, DateTime? arrivalDateTo = null, string guestFullName = null, string guestEmail = null, string guestPhoneNumber = null)
         {
-            return new string[] { "value1", "value2" };
+            try
+            {
+                var result = _reservationBo.SearchForReservations(arrivalDateFrom, arrivalDateTo, guestFullName, guestEmail, guestPhoneNumber);
+
+                return Ok(result);
+            }
+            catch (Exception exception)
+            {
+                return BadRequest(exception.Message);
+            }
         }
 
-        // GET api/values/5
+        // GET api/Reservation/{reservationStatus}
+        [HttpGet("{reservationStatus}")]
+        public IActionResult Get(string reservationStatus)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(reservationStatus)) return BadRequest("Reservation status can't be null");
+
+                var result = _reservationBo.BrowseForReservationStatus(reservationStatus);
+                return Ok(result);
+
+            }
+            catch (Exception exception)
+            {
+                return BadRequest(exception.Message);
+            }
+        }
+
+        // GET api/Reservation/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult Get(Guid id)
         {
-            return "value";
+            try
+            {
+                var result = _reservationBo.BrowseReservation(id);
+                return Ok(result);
+
+            }
+            catch (Exception exception)
+            {
+                return BadRequest(exception.Message);
+            }
         }
 
-        // POST api/values
+        // POST api/Reservation
         [HttpPost]
-        public void Post([FromBody]PrxReservation value)
+        public IActionResult Post([FromBody]PrxReservation reservationModel)
         {
-            var guest = new BoGuest().Create(value.GuestName, value.GuestEmail, value.GuestPhone);
-            reservationBo.Book(guest, value.RoomNumber, value.ArrivalDate, value.DepartureDate);
+            try
+            {
+                var guest = _guestBo.Create(reservationModel.GuestName, reservationModel.GuestEmail, reservationModel.GuestPhone);
+                var reservation = _reservationBo.Book(guest, reservationModel.RoomNumber, reservationModel.ArrivalDate, reservationModel.DepartureDate);
+
+                return Ok(reservation);
+            }
+            catch (Exception exception)
+            {
+                return BadRequest(exception.Message);
+            }
         }
 
-        [HttpPost("{id}/cancel")]
-        public void Cancel(int id)
+        // PUT api/Reservation/{id}/Cancel
+        [HttpPut("{id}/Cancel")]
+        public IActionResult Cancel(Guid id)
         {
+            try
+            {
+                _reservationBo.Cancel(id);
+                return Ok();
+
+            }
+            catch (Exception exception)
+            {
+                return BadRequest(exception.Message);
+            }
         }
 
-        [HttpPost("{id}/checkin")]
-        public void CheckIn(int id)
+        // PUT api/Reservation/{id}/Checkin
+        [HttpPut("{id}/Checkin")]
+        public IActionResult CheckIn(Guid id)
         {
+            try
+            {
+                _reservationBo.CheckIn(id);
+                return Ok();
+
+            }
+            catch (Exception exception)
+            {
+                return BadRequest(exception.Message);
+            }
         }
 
-        [HttpPost("{id}/checkout")]
-        public void Checkout(int id, DateTime date)
+        // PUT api/Reservation/{id}/Checkout
+        [HttpPut("{id}/Checkout")]
+        public IActionResult Checkout(Guid id)
         {
-            
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]DtoReservation value)
-        {
+            try
+            {
+                _reservationBo.Checkout(id);
+                return Ok();
+            }
+            catch (Exception exception)
+            {
+                return BadRequest(exception.Message);
+            }
         }
 
     }

@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "ae7ff6dd5a7a5a3f44eccadffcb640eacac9fe6f"
+    "signature": "614ec57a619e64d7c2de13d50b8d79595a63e94f"
   },
   "compilationOptions": {
     "defines": [
@@ -75,6 +75,14 @@
             "rid": "win-x86",
             "assetType": "native"
           }
+        }
+      },
+      "LinqKit.Core/1.1.12": {
+        "runtime": {
+          "lib/netstandard2.0/LinqKit.Core.dll": {}
+        },
+        "compile": {
+          "lib/netstandard2.0/LinqKit.Core.dll": {}
         }
       },
       "Microsoft.ApplicationInsights/2.4.0": {
@@ -4076,6 +4084,7 @@
           "HotelReservation.Data.Common": "1.0.0",
           "HotelReservation.Data.Repositories": "1.0.0",
           "HotelReservation.Models": "1.0.0",
+          "LinqKit.Core": "1.1.12",
           "Unity": "5.5.5"
         },
         "runtime": {
@@ -4310,6 +4319,13 @@
       "sha512": "sha512-GsCf4q+eyaI49rCPlgYxdxa1SQCysXFFdSJWdstrwxytg4+VPYLYrXD4AT2rjHVJ+UF7SSWX9CapWEYaU4ejVQ==",
       "path": "libuv/1.10.0",
       "hashPath": "libuv.1.10.0.nupkg.sha512"
+    },
+    "LinqKit.Core/1.1.12": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xwmGs4owVIT30/QTt9/fOs4IgkbAr5MAGZL8UW+dOZ4mKoQFBMqdxakrUYJUatoXhg4oYfahF3i+0Ri5PRc66A==",
+      "path": "linqkit.core/1.1.12",
+      "hashPath": "linqkit.core.1.1.12.nupkg.sha512"
     },
     "Microsoft.ApplicationInsights/2.4.0": {
       "type": "package",

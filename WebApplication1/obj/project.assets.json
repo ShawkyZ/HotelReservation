@@ -42,6 +42,15 @@
           }
         }
       },
+      "LinqKit.Core/1.1.12": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/LinqKit.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/LinqKit.Core.dll": {}
+        }
+      },
       "Microsoft.ApplicationInsights/2.4.0": {
         "type": "package",
         "dependencies": {
@@ -5051,6 +5060,7 @@
           "HotelReservation.Data.Common": "1.0.0",
           "HotelReservation.Data.Repositories": "1.0.0",
           "HotelReservation.Models": "1.0.0",
+          "LINQKit.Core": "1.1.12",
           "Unity": "5.5.5"
         },
         "compile": {
@@ -5120,6 +5130,32 @@
         "runtimes/win-arm/native/libuv.dll",
         "runtimes/win-x64/native/libuv.dll",
         "runtimes/win-x86/native/libuv.dll"
+      ]
+    },
+    "LinqKit.Core/1.1.12": {
+      "sha512": "xwmGs4owVIT30/QTt9/fOs4IgkbAr5MAGZL8UW+dOZ4mKoQFBMqdxakrUYJUatoXhg4oYfahF3i+0Ri5PRc66A==",
+      "type": "package",
+      "path": "linqkit.core/1.1.12",
+      "files": [
+        "lib/net35/LinqKit.Core.dll",
+        "lib/net35/LinqKit.Core.xml",
+        "lib/net40/LinqKit.Core.dll",
+        "lib/net40/LinqKit.Core.xml",
+        "lib/net45/LinqKit.Core.dll",
+        "lib/net45/LinqKit.Core.xml",
+        "lib/netstandard1.3/LinqKit.Core.dll",
+        "lib/netstandard1.3/LinqKit.Core.xml",
+        "lib/netstandard2.0/LinqKit.Core.dll",
+        "lib/netstandard2.0/LinqKit.Core.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/LinqKit.Core.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/LinqKit.Core.xml",
+        "lib/portable-net45+win8+wp8+wpa81/LinqKit.Core.dll",
+        "lib/portable-net45+win8+wp8+wpa81/LinqKit.Core.xml",
+        "lib/uap10.0/LinqKit.Core.dll",
+        "lib/uap10.0/LinqKit.Core.pri",
+        "lib/uap10.0/LinqKit.Core.xml",
+        "linqkit.core.1.1.12.nupkg.sha512",
+        "linqkit.core.nuspec"
       ]
     },
     "Microsoft.ApplicationInsights/2.4.0": {
@@ -13306,8 +13342,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\thewh\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
+    "C:\\Users\\thamd\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -13316,20 +13351,18 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\HotelReservation\\WebApplication1\\HotelReservation.API.csproj",
+      "projectUniqueName": "E:\\HotelReservation\\WebApplication1\\HotelReservation.API.csproj",
       "projectName": "HotelReservation.API",
-      "projectPath": "D:\\HotelReservation\\WebApplication1\\HotelReservation.API.csproj",
-      "packagesPath": "C:\\Users\\thewh\\.nuget\\packages\\",
-      "outputPath": "D:\\HotelReservation\\WebApplication1\\obj\\",
+      "projectPath": "E:\\HotelReservation\\WebApplication1\\HotelReservation.API.csproj",
+      "packagesPath": "C:\\Users\\thamd\\.nuget\\packages\\",
+      "outputPath": "E:\\HotelReservation\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\thewh\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        "C:\\Users\\thamd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -13341,11 +13374,11 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "D:\\HotelReservation\\HotelReservation.Models\\HotelReservation.Models.csproj": {
-              "projectPath": "D:\\HotelReservation\\HotelReservation.Models\\HotelReservation.Models.csproj"
+            "E:\\HotelReservation\\HotelReservation.Models\\HotelReservation.Models.csproj": {
+              "projectPath": "E:\\HotelReservation\\HotelReservation.Models\\HotelReservation.Models.csproj"
             },
-            "D:\\HotelReservation\\HotelReservation.Bo\\HotelReservation.Bo.csproj": {
-              "projectPath": "D:\\HotelReservation\\HotelReservation.Bo\\HotelReservation.Bo.csproj"
+            "E:\\HotelReservation\\HotelReservation.Bo\\HotelReservation.Bo.csproj": {
+              "projectPath": "E:\\HotelReservation\\HotelReservation.Bo\\HotelReservation.Bo.csproj"
             }
           }
         }

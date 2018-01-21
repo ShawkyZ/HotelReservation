@@ -20,10 +20,6 @@ D:\HotelReservation\HotelReservation.Bo.Test\bin\Debug\netcoreapp2.0\HotelReserv
 D:\HotelReservation\HotelReservation.Bo.Test\bin\Debug\netcoreapp2.0\NUnit3.TestAdapter.dll
 D:\HotelReservation\HotelReservation.Bo.Test\bin\Debug\netcoreapp2.0\nunit.engine.netstandard.dll
 D:\HotelReservation\HotelReservation.Bo.Test\bin\Debug\netcoreapp2.0\Mono.Cecil.dll
-E:\HotelReservation\HotelReservation.Bo.Test\obj\Debug\netcoreapp2.0\HotelReservation.Bo.Test.csprojResolveAssemblyReference.cache
-E:\HotelReservation\HotelReservation.Bo.Test\obj\Debug\netcoreapp2.0\HotelReservation.Bo.Test.csproj.CoreCompileInputs.cache
-E:\HotelReservation\HotelReservation.Bo.Test\obj\Debug\netcoreapp2.0\HotelReservation.Bo.Test.AssemblyInfoInputs.cache
-E:\HotelReservation\HotelReservation.Bo.Test\obj\Debug\netcoreapp2.0\HotelReservation.Bo.Test.AssemblyInfo.cs
 E:\HotelReservation\HotelReservation.Bo.Test\bin\Debug\netcoreapp2.0\NUnit3.TestAdapter.dll
 E:\HotelReservation\HotelReservation.Bo.Test\bin\Debug\netcoreapp2.0\nunit.engine.netstandard.dll
 E:\HotelReservation\HotelReservation.Bo.Test\bin\Debug\netcoreapp2.0\Mono.Cecil.dll
@@ -40,5 +36,9 @@ E:\HotelReservation\HotelReservation.Bo.Test\bin\Debug\netcoreapp2.0\HotelReserv
 E:\HotelReservation\HotelReservation.Bo.Test\bin\Debug\netcoreapp2.0\HotelReservation.Models.pdb
 E:\HotelReservation\HotelReservation.Bo.Test\bin\Debug\netcoreapp2.0\HotelReservation.Data.Common.pdb
 E:\HotelReservation\HotelReservation.Bo.Test\bin\Debug\netcoreapp2.0\HotelReservation.Data.Repositories.pdb
+E:\HotelReservation\HotelReservation.Bo.Test\obj\Debug\netcoreapp2.0\HotelReservation.Bo.Test.csprojResolveAssemblyReference.cache
+E:\HotelReservation\HotelReservation.Bo.Test\obj\Debug\netcoreapp2.0\HotelReservation.Bo.Test.csproj.CoreCompileInputs.cache
+E:\HotelReservation\HotelReservation.Bo.Test\obj\Debug\netcoreapp2.0\HotelReservation.Bo.Test.AssemblyInfoInputs.cache
+E:\HotelReservation\HotelReservation.Bo.Test\obj\Debug\netcoreapp2.0\HotelReservation.Bo.Test.AssemblyInfo.cs
 E:\HotelReservation\HotelReservation.Bo.Test\obj\Debug\netcoreapp2.0\HotelReservation.Bo.Test.dll
 E:\HotelReservation\HotelReservation.Bo.Test\obj\Debug\netcoreapp2.0\HotelReservation.Bo.Test.pdb

@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="LINQKit.Core" Version="1.1.12" />
     <PackageReference Include="Unity" Version="5.5.5" />
   </ItemGroup>
 

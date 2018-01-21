@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.0": {
+      "LinqKit.Core/1.1.12": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/LinqKit.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/LinqKit.Core.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.4.0": {
         "type": "package",
         "compile": {
@@ -932,6 +941,32 @@
     }
   },
   "libraries": {
+    "LinqKit.Core/1.1.12": {
+      "sha512": "xwmGs4owVIT30/QTt9/fOs4IgkbAr5MAGZL8UW+dOZ4mKoQFBMqdxakrUYJUatoXhg4oYfahF3i+0Ri5PRc66A==",
+      "type": "package",
+      "path": "linqkit.core/1.1.12",
+      "files": [
+        "lib/net35/LinqKit.Core.dll",
+        "lib/net35/LinqKit.Core.xml",
+        "lib/net40/LinqKit.Core.dll",
+        "lib/net40/LinqKit.Core.xml",
+        "lib/net45/LinqKit.Core.dll",
+        "lib/net45/LinqKit.Core.xml",
+        "lib/netstandard1.3/LinqKit.Core.dll",
+        "lib/netstandard1.3/LinqKit.Core.xml",
+        "lib/netstandard2.0/LinqKit.Core.dll",
+        "lib/netstandard2.0/LinqKit.Core.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/LinqKit.Core.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/LinqKit.Core.xml",
+        "lib/portable-net45+win8+wp8+wpa81/LinqKit.Core.dll",
+        "lib/portable-net45+win8+wp8+wpa81/LinqKit.Core.xml",
+        "lib/uap10.0/LinqKit.Core.dll",
+        "lib/uap10.0/LinqKit.Core.pri",
+        "lib/uap10.0/LinqKit.Core.xml",
+        "linqkit.core.1.1.12.nupkg.sha512",
+        "linqkit.core.nuspec"
+      ]
+    },
     "Microsoft.CSharp/4.4.0": {
       "sha512": "vvVR/B08YVghQ4jHEloxqw2ZWzEGE1AOA5E0DioUM3ujbXz6FD3AfB/0Jl2ohJPd0nXYGwmPe1En6HTsSriq1A==",
       "type": "package",
@@ -3487,13 +3522,13 @@
       "HotelReservation.Data.Common >= 1.0.0",
       "HotelReservation.Data.Repositories >= 1.0.0",
       "HotelReservation.Models >= 1.0.0",
+      "LINQKit.Core >= 1.1.12",
       "Microsoft.NETCore.App >= 2.0.0",
       "Unity >= 5.5.5"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\thewh\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
+    "C:\\Users\\thamd\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -3502,20 +3537,18 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\HotelReservation\\HotelReservation.Bo\\HotelReservation.Bo.csproj",
+      "projectUniqueName": "E:\\HotelReservation\\HotelReservation.Bo\\HotelReservation.Bo.csproj",
       "projectName": "HotelReservation.Bo",
-      "projectPath": "D:\\HotelReservation\\HotelReservation.Bo\\HotelReservation.Bo.csproj",
-      "packagesPath": "C:\\Users\\thewh\\.nuget\\packages\\",
-      "outputPath": "D:\\HotelReservation\\HotelReservation.Bo\\obj\\",
+      "projectPath": "E:\\HotelReservation\\HotelReservation.Bo\\HotelReservation.Bo.csproj",
+      "packagesPath": "C:\\Users\\thamd\\.nuget\\packages\\",
+      "outputPath": "E:\\HotelReservation\\HotelReservation.Bo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\thewh\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        "C:\\Users\\thamd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -3527,14 +3560,14 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "D:\\HotelReservation\\HotelReservation.Data.Repositories\\HotelReservation.Data.Repositories.csproj": {
-              "projectPath": "D:\\HotelReservation\\HotelReservation.Data.Repositories\\HotelReservation.Data.Repositories.csproj"
+            "E:\\HotelReservation\\HotelReservation.Data.Repositories\\HotelReservation.Data.Repositories.csproj": {
+              "projectPath": "E:\\HotelReservation\\HotelReservation.Data.Repositories\\HotelReservation.Data.Repositories.csproj"
             },
-            "D:\\HotelReservation\\HotelReservation.Data.Common\\HotelReservation.Data.Common.csproj": {
-              "projectPath": "D:\\HotelReservation\\HotelReservation.Data.Common\\HotelReservation.Data.Common.csproj"
+            "E:\\HotelReservation\\HotelReservation.Data.Common\\HotelReservation.Data.Common.csproj": {
+              "projectPath": "E:\\HotelReservation\\HotelReservation.Data.Common\\HotelReservation.Data.Common.csproj"
             },
-            "D:\\HotelReservation\\HotelReservation.Models\\HotelReservation.Models.csproj": {
-              "projectPath": "D:\\HotelReservation\\HotelReservation.Models\\HotelReservation.Models.csproj"
+            "E:\\HotelReservation\\HotelReservation.Models\\HotelReservation.Models.csproj": {
+              "projectPath": "E:\\HotelReservation\\HotelReservation.Models\\HotelReservation.Models.csproj"
             }
           }
         }
@@ -3548,6 +3581,10 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
+          "LINQKit.Core": {
+            "target": "Package",
+            "version": "[1.1.12, )"
+          },
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
             "target": "Package",
