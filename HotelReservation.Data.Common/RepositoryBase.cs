@@ -70,9 +70,9 @@ namespace HotelReservation.Data.Common
 
         public virtual Task<TEntity> GetAsyncById(object id) => _dbSet.FindAsync(id);
 
-        public virtual object Insert(TEntity entity)
+        public virtual TEntity Insert(TEntity entity)
         {
-            return _dbSet.Add(entity);
+            return _dbSet.Add(entity).Entity;
         }
 
         public void BulkInsert(IEnumerable<TEntity> entities) => _dbSet.AddRange(entities);

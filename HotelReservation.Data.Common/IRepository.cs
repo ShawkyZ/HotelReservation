@@ -17,7 +17,7 @@ namespace HotelReservation.Data.Common
         Task<ICollection<TEntity>> GetAsync(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, IList<Expression<Func<TEntity, object>>> includedProperties = null, int? pageIndex = null, int? pageSize = null);
         Task<TEntity> GetAsyncById(object id);
         TEntity GetById(object id);
-        object Insert(TEntity entity);
+        TEntity Insert(TEntity entity);
         void Update(TEntity entity);
     }
 }
