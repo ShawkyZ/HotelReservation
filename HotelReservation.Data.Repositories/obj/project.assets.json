@@ -3369,8 +3369,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\thewh\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
+    "C:\\Users\\thamd\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -3379,20 +3378,18 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\HotelReservation\\HotelReservation.Data.Repositories\\HotelReservation.Data.Repositories.csproj",
+      "projectUniqueName": "E:\\HotelReservation\\HotelReservation.Data.Repositories\\HotelReservation.Data.Repositories.csproj",
       "projectName": "HotelReservation.Data.Repositories",
-      "projectPath": "D:\\HotelReservation\\HotelReservation.Data.Repositories\\HotelReservation.Data.Repositories.csproj",
-      "packagesPath": "C:\\Users\\thewh\\.nuget\\packages\\",
-      "outputPath": "D:\\HotelReservation\\HotelReservation.Data.Repositories\\obj\\",
+      "projectPath": "E:\\HotelReservation\\HotelReservation.Data.Repositories\\HotelReservation.Data.Repositories.csproj",
+      "packagesPath": "C:\\Users\\thamd\\.nuget\\packages\\",
+      "outputPath": "E:\\HotelReservation\\HotelReservation.Data.Repositories\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\thewh\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        "C:\\Users\\thamd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -3404,11 +3401,11 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "D:\\HotelReservation\\HotelReservation.Data.Common\\HotelReservation.Data.Common.csproj": {
-              "projectPath": "D:\\HotelReservation\\HotelReservation.Data.Common\\HotelReservation.Data.Common.csproj"
+            "E:\\HotelReservation\\HotelReservation.Data.Common\\HotelReservation.Data.Common.csproj": {
+              "projectPath": "E:\\HotelReservation\\HotelReservation.Data.Common\\HotelReservation.Data.Common.csproj"
             },
-            "D:\\HotelReservation\\HotelReservation.Models\\HotelReservation.Models.csproj": {
-              "projectPath": "D:\\HotelReservation\\HotelReservation.Models\\HotelReservation.Models.csproj"
+            "E:\\HotelReservation\\HotelReservation.Models\\HotelReservation.Models.csproj": {
+              "projectPath": "E:\\HotelReservation\\HotelReservation.Models\\HotelReservation.Models.csproj"
             }
           }
         }

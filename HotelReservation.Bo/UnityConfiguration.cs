@@ -3,6 +3,7 @@ using HotelReservation.Data.Repositories.Implementations;
 using HotelReservation.Data.Repositories.Interfaces;
 using HotelReservation.Models.Entities;
 using Unity;
+using Unity.Lifetime;
 
 namespace HotelReservation.Bo
 {
@@ -13,10 +14,10 @@ namespace HotelReservation.Bo
 
         public static void RegisterTypes()
         {
-            Container.RegisterType<IRepository<DtoRoom>, RoomRepository>();
-            Container.RegisterType<IRepository<DtoRoomType>, RoomTypeRepository>();
-            Container.RegisterType<IRepository<DtoGuest>, GuestRepository>();
-            Container.RegisterType<IRepository<DtoReservation>, ReservationRepository>();
+            Container.RegisterType<IUnitOfWork, UnitOfWork>(new PerThreadLifetimeManager());
+            //Container.RegisterType<IRepository<DtoRoomType>, RoomTypeRepository>();
+            //Container.RegisterType<IRepository<DtoGuest>, GuestRepository>();
+            //Container.RegisterType<IRepository<DtoReservation>, ReservationRepository>();
         }
     }
 }

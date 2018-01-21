@@ -6,19 +6,18 @@ using System.Threading.Tasks;
 
 namespace HotelReservation.Data.Common
 {
-    public interface IRepository<TEntity> : IDisposable
+    public interface IRepository<TEntity> where TEntity : class
     {
-        IQueryable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
-            IList<Expression<Func<TEntity, object>>> includedProperties = null, int? pageIndex = null, int? pageSize = null);
-        Task<ICollection<TEntity>> GetAsync(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
-            IList<Expression<Func<TEntity, object>>> includedProperties = null, int? pageIndex = null, int? pageSize = null);
-        TEntity GetById(object id);
-        Task<TEntity> GetAsyncById(object id);
-        TEntity Insert(TEntity entity);
-        IEnumerable<TEntity> BulkInsert(IEnumerable<TEntity> entities);
-        void Update(TEntity entity);
-        void Delete(Expression<Func<TEntity, bool>> where);
         void BulkDelete(IQueryable<TEntity> entities);
+        void BulkInsert(IEnumerable<TEntity> entities);
+        void Delete(Expression<Func<TEntity, bool>> where);
         void Detach(TEntity entity);
+        void Dispose();
+        IQueryable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, IList<Expression<Func<TEntity, object>>> includedProperties = null, int? pageIndex = null, int? pageSize = null);
+        Task<ICollection<TEntity>> GetAsync(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, IList<Expression<Func<TEntity, object>>> includedProperties = null, int? pageIndex = null, int? pageSize = null);
+        Task<TEntity> GetAsyncById(object id);
+        TEntity GetById(object id);
+        object Insert(TEntity entity);
+        void Update(TEntity entity);
     }
 }

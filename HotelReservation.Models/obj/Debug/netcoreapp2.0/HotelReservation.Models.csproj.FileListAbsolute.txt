@@ -7,3 +7,11 @@ D:\HotelReservation\HotelReservation.Models\obj\Debug\netcoreapp2.0\HotelReserva
 D:\HotelReservation\HotelReservation.Models\obj\Debug\netcoreapp2.0\HotelReservation.Models.dll
 D:\HotelReservation\HotelReservation.Models\obj\Debug\netcoreapp2.0\HotelReservation.Models.pdb
 D:\HotelReservation\HotelReservation.Models\obj\Debug\netcoreapp2.0\HotelReservation.Models.csprojResolveAssemblyReference.cache
+E:\HotelReservation\HotelReservation.Models\bin\Debug\netcoreapp2.0\HotelReservation.Models.deps.json
+E:\HotelReservation\HotelReservation.Models\bin\Debug\netcoreapp2.0\HotelReservation.Models.dll
+E:\HotelReservation\HotelReservation.Models\bin\Debug\netcoreapp2.0\HotelReservation.Models.pdb
+E:\HotelReservation\HotelReservation.Models\obj\Debug\netcoreapp2.0\HotelReservation.Models.csproj.CoreCompileInputs.cache
+E:\HotelReservation\HotelReservation.Models\obj\Debug\netcoreapp2.0\HotelReservation.Models.AssemblyInfoInputs.cache
+E:\HotelReservation\HotelReservation.Models\obj\Debug\netcoreapp2.0\HotelReservation.Models.AssemblyInfo.cs
+E:\HotelReservation\HotelReservation.Models\obj\Debug\netcoreapp2.0\HotelReservation.Models.dll
+E:\HotelReservation\HotelReservation.Models\obj\Debug\netcoreapp2.0\HotelReservation.Models.pdb

@@ -11,3 +11,16 @@ D:\HotelReservation\HotelReservation.Data.Repositories\obj\Debug\netcoreapp2.0\H
 D:\HotelReservation\HotelReservation.Data.Repositories\obj\Debug\netcoreapp2.0\HotelReservation.Data.Repositories.AssemblyInfo.cs
 D:\HotelReservation\HotelReservation.Data.Repositories\obj\Debug\netcoreapp2.0\HotelReservation.Data.Repositories.dll
 D:\HotelReservation\HotelReservation.Data.Repositories\obj\Debug\netcoreapp2.0\HotelReservation.Data.Repositories.pdb
+E:\HotelReservation\HotelReservation.Data.Repositories\bin\Debug\netcoreapp2.0\HotelReservation.Data.Repositories.deps.json
+E:\HotelReservation\HotelReservation.Data.Repositories\bin\Debug\netcoreapp2.0\HotelReservation.Data.Repositories.dll
+E:\HotelReservation\HotelReservation.Data.Repositories\bin\Debug\netcoreapp2.0\HotelReservation.Data.Repositories.pdb
+E:\HotelReservation\HotelReservation.Data.Repositories\bin\Debug\netcoreapp2.0\HotelReservation.Data.Common.dll
+E:\HotelReservation\HotelReservation.Data.Repositories\bin\Debug\netcoreapp2.0\HotelReservation.Models.dll
+E:\HotelReservation\HotelReservation.Data.Repositories\bin\Debug\netcoreapp2.0\HotelReservation.Data.Common.pdb
+E:\HotelReservation\HotelReservation.Data.Repositories\bin\Debug\netcoreapp2.0\HotelReservation.Models.pdb
+E:\HotelReservation\HotelReservation.Data.Repositories\obj\Debug\netcoreapp2.0\HotelReservation.Data.Repositories.csprojResolveAssemblyReference.cache
+E:\HotelReservation\HotelReservation.Data.Repositories\obj\Debug\netcoreapp2.0\HotelReservation.Data.Repositories.csproj.CoreCompileInputs.cache
+E:\HotelReservation\HotelReservation.Data.Repositories\obj\Debug\netcoreapp2.0\HotelReservation.Data.Repositories.AssemblyInfoInputs.cache
+E:\HotelReservation\HotelReservation.Data.Repositories\obj\Debug\netcoreapp2.0\HotelReservation.Data.Repositories.AssemblyInfo.cs
+E:\HotelReservation\HotelReservation.Data.Repositories\obj\Debug\netcoreapp2.0\HotelReservation.Data.Repositories.dll
+E:\HotelReservation\HotelReservation.Data.Repositories\obj\Debug\netcoreapp2.0\HotelReservation.Data.Repositories.pdb

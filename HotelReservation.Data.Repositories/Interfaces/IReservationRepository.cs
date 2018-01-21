@@ -4,7 +4,7 @@ using HotelReservation.Models.Entities;
 
 namespace HotelReservation.Data.Repositories.Interfaces
 {
-    public interface IReservationRepository : IRepository<DtoReservation>
+    public interface IReservationRepository
     {
 
     }

@@ -9,3 +9,14 @@ D:\HotelReservation\HotelReservation.Data.Common\obj\Debug\netcoreapp2.0\HotelRe
 D:\HotelReservation\HotelReservation.Data.Common\obj\Debug\netcoreapp2.0\HotelReservation.Data.Common.AssemblyInfo.cs
 D:\HotelReservation\HotelReservation.Data.Common\obj\Debug\netcoreapp2.0\HotelReservation.Data.Common.dll
 D:\HotelReservation\HotelReservation.Data.Common\obj\Debug\netcoreapp2.0\HotelReservation.Data.Common.pdb
+E:\HotelReservation\HotelReservation.Data.Common\bin\Debug\netcoreapp2.0\HotelReservation.Data.Common.deps.json
+E:\HotelReservation\HotelReservation.Data.Common\bin\Debug\netcoreapp2.0\HotelReservation.Data.Common.dll
+E:\HotelReservation\HotelReservation.Data.Common\bin\Debug\netcoreapp2.0\HotelReservation.Data.Common.pdb
+E:\HotelReservation\HotelReservation.Data.Common\bin\Debug\netcoreapp2.0\HotelReservation.Models.dll
+E:\HotelReservation\HotelReservation.Data.Common\bin\Debug\netcoreapp2.0\HotelReservation.Models.pdb
+E:\HotelReservation\HotelReservation.Data.Common\obj\Debug\netcoreapp2.0\HotelReservation.Data.Common.csprojResolveAssemblyReference.cache
+E:\HotelReservation\HotelReservation.Data.Common\obj\Debug\netcoreapp2.0\HotelReservation.Data.Common.csproj.CoreCompileInputs.cache
+E:\HotelReservation\HotelReservation.Data.Common\obj\Debug\netcoreapp2.0\HotelReservation.Data.Common.AssemblyInfoInputs.cache
+E:\HotelReservation\HotelReservation.Data.Common\obj\Debug\netcoreapp2.0\HotelReservation.Data.Common.AssemblyInfo.cs
+E:\HotelReservation\HotelReservation.Data.Common\obj\Debug\netcoreapp2.0\HotelReservation.Data.Common.dll
+E:\HotelReservation\HotelReservation.Data.Common\obj\Debug\netcoreapp2.0\HotelReservation.Data.Common.pdb
