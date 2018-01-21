@@ -18,6 +18,7 @@ namespace HotelReservation.Bo
                 Phone = phone
             };
             Repository.Insert(dtoGuest);
+            UnitOfWork.SaveChanges();
             return dtoGuest;
         }
 

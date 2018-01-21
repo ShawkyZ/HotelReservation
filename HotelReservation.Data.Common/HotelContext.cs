@@ -5,7 +5,7 @@ namespace HotelReservation.Data.Common
 {
     public class HotelContext : DbContext
     {
-        public HotelContext()
+        public HotelContext(): base(new DbContextOptionsBuilder().UseSqlServer("Password=123;Persist Security Info=True;User ID=task;Initial Catalog=taskDB;Data Source=52.178.217.7").Options)
         {
         }
 

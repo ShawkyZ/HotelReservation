@@ -16,6 +16,8 @@ namespace HotelReservation.Bo
                 throw new ArgumentException("No room with the incoming number");
             if(arrivalData >= departureDate)
                 throw new ArgumentException("Arrival date can't be greater than Departure Date");
+            if((departureDate- arrivalData).Days < dtoRoom.RoomType.CancellationFeeNightsCount)
+                throw new ArgumentException("number of days must be more than number of cancelation days fees");
             var dtoReservation = new DtoReservation
             {
                 ArrivalDate = arrivalData,
@@ -41,12 +43,14 @@ namespace HotelReservation.Bo
             var remainingFees = reservation.Room.RoomType.Rate - reservationStatus.Fees;
             reservation.AddReservationStatus(new DtoReservationStatus{ReservationStatus = ReservationStatus.CheckedOut, Fees = remainingFees});
             Repository.Update(reservation);
+            UnitOfWork.SaveChanges();
         }
         public void CheckIn(DtoReservation reservation)
         {
             //Marks that reservation as "Checked in"
             reservation.AddReservationStatus(new DtoReservationStatus{ReservationStatus = ReservationStatus.CheckedIn});
             Repository.Update(reservation);
+            UnitOfWork.SaveChanges();
         }
 
         public void Cancel(DtoReservation reservation)
@@ -55,6 +59,7 @@ namespace HotelReservation.Bo
             var cancelationFees = reservation.Room.RoomType.CancellationFeeNightsCount * reservation.Room.RoomType.Rate;
             reservation.AddReservationStatus(new DtoReservationStatus { ReservationStatus = ReservationStatus.Canceled, Fees = cancelationFees});
             Repository.Update(reservation);
+            UnitOfWork.SaveChanges();
         }
 
         public IEnumerable<DtoReservation> BrowseForReservation(DtoReservationStatus reservationStatus)
