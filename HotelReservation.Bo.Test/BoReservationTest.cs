@@ -29,7 +29,7 @@ namespace HotelReservation.Bo.Test
             var boReservation = new BoReservation();
 
             //Act
-            var dtoReservation = boReservation.Book(new DtoGuest(), new DtoRoom { RoomType = new DtoRoomType() }, DateTime.Now,
+            var dtoReservation = boReservation.Book(new DtoGuest(), "" , DateTime.Now,
                 DateTime.Now.AddDays(1));
 
             //Assert
