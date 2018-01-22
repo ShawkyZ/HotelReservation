@@ -27,9 +27,27 @@ namespace HotelReservation.Bo.Test
             //Arrange
             unitOfWorkMocked.Setup(x => x.RepositoryFor<DtoReservation>().Insert(It.IsAny<DtoReservation>())).Returns<DtoReservation>(x => x);
             var boReservation = new BoReservation();
+        
+            var dt = DateTime.Now;
+            var room = new DtoRoom()
+            {
+                CreatedOn = dt,
+                Id = Guid.NewGuid(),
+                ModifiedOn = dt,
+                Number = "1",
+                RoomType = new DtoRoomType()
+                {
+                    CreatedOn = dt,
+                    Id = Guid.NewGuid(),
+                    ModifiedOn = dt,
+                    CancellationFeeNightsCount = 1,
+                    DepositFeePercentage = 70,
+                    Rate = 100
+                }
+            };
 
             //Act
-            var dtoReservation = boReservation.Book(new DtoGuest(), "" , DateTime.Now,
+            var dtoReservation = boReservation.Book(new DtoGuest(), room , DateTime.Now,
                 DateTime.Now.AddDays(1));
 
             //Assert

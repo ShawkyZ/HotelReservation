@@ -4,7 +4,7 @@ using System;
 
 namespace HotelReservation.Data.Common
 {
-    public class UnitOfWorkx : IUnitOfWorkx
+    public class UnitOfWorkx : IUnitOfWork
     {
         #region Fields
 
