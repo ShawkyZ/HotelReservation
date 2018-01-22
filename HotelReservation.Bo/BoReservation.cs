@@ -3,41 +3,38 @@ using System.Collections.Generic;
 using System.Linq;
 using HotelReservation.Models.Entities;
 using LinqKit;
+using Microsoft.EntityFrameworkCore;
 
 namespace HotelReservation.Bo
 {
     public class BoReservation : BoBase<DtoReservation>
     {
-        public DtoReservation Book(DtoGuest dtoGuest, string roomNumber, DateTime arrivalData, DateTime departureDate)
+        public DtoReservation Book(DtoGuest dtoGuest, DtoRoom dtoRoom, DateTime arrivalData, DateTime departureDate)
         {
             // roles: 
             // number of days must be more than number of cancelation days fees
-            var dtoRoom = UnitOfWork.RepositoryFor<DtoRoom>().Get(x => x.Number == roomNumber).SingleOrDefault();
             if (dtoRoom == null)
                 throw new ArgumentException("No room with the incoming number");
             if (arrivalData >= departureDate)
                 throw new ArgumentException("Arrival date can't be greater than Departure Date");
-            if ((departureDate - arrivalData).Days < dtoRoom.RoomType.CancellationFeeNightsCount)
-                throw new ArgumentException("number of days must be more than number of cancelation days fees");
-            var dtoReservation = new DtoReservation
+           var dtoReservation = new DtoReservation
             {
                 ArrivalDate = arrivalData,
                 DepartureDate = departureDate,
-                Guest = dtoGuest,
+                GuestId = dtoGuest.Id.Value,
                 Room = dtoRoom
             };
-            var deoositFees = 100 / (dtoReservation.Room.RoomType.DepositFeePercentage);
+            var deoositFees = dtoRoom.RoomType.DepositFeePercentage * (dtoRoom.RoomType.DepositFeePercentage / 100);
             dtoReservation.AddReservationStatus(new DtoReservationStatus { ReservationStatus = ReservationStatus.Booked, Fees = deoositFees });
             Repository.Insert(dtoReservation);
-            UnitOfWork.SaveChanges();
+            Repository.SaveChanges();
             return dtoReservation;
         }
-        public void Checkout(Guid reservationId)
+        public void Checkout(DtoReservation reservation)
         {
             // roles: 
             // mark reservation as checkedout
             // Hotel write down remaining amount to the Guest Account
-            var reservation = Repository.GetById(reservationId);
             var reservationStatus =
                 reservation.ReservationStatusList.SingleOrDefault(x => x.ReservationStatus == ReservationStatus.Booked);
             if (reservationStatus == null)
@@ -45,30 +42,31 @@ namespace HotelReservation.Bo
             var remainingFees = reservation.Room.RoomType.Rate - reservationStatus.Fees;
             reservation.AddReservationStatus(new DtoReservationStatus { ReservationStatus = ReservationStatus.CheckedOut, Fees = remainingFees });
             Repository.Update(reservation);
-            UnitOfWork.SaveChanges();
+            Repository.SaveChanges();
         }
-        public void CheckIn(Guid reservationId)
+        public void CheckIn(DtoReservation reservation)
         {
             //Marks that reservation as "Checked in"
-            var reservation = Repository.GetById(reservationId);
             reservation.AddReservationStatus(new DtoReservationStatus { ReservationStatus = ReservationStatus.CheckedIn });
             Repository.Update(reservation);
-            UnitOfWork.SaveChanges();
+            Repository.SaveChanges();
         }
-
-        public void Cancel(Guid reservationId)
+        public DtoReservation Get(Guid reservationId)
+        {
+            return Repository.Get(x=>x.Id == reservationId).Include(x=>x.ReservationStatusList).Include(x => x.Room).Include(x=>x.Room.RoomType).FirstOrDefault();
+        }
+        public void Cancel(DtoReservation reservation)
         {
             //hotel posts a cancellation fee to the Guest Account
-            var reservation = Repository.GetById(reservationId);
             var cancelationFees = reservation.Room.RoomType.CancellationFeeNightsCount * reservation.Room.RoomType.Rate;
             reservation.AddReservationStatus(new DtoReservationStatus { ReservationStatus = ReservationStatus.Canceled, Fees = cancelationFees });
             Repository.Update(reservation);
-            UnitOfWork.SaveChanges();
+            Repository.SaveChanges();
         }
 
         public IEnumerable<DtoReservation> BrowseForReservationStatus(string reservationStatus)
         {
-            return Repository.Get(x => x.GetCurrentStatus().ReservationStatus.ToString().ToLower() == reservationStatus.ToLower()).ToList();
+            return Repository.Get(x => x.GetCurrentStatus().ReservationStatus.ToString().ToLower() == reservationStatus.ToLower()).Include(x=>x.ReservationStatusList).ToList();
         }
         public IEnumerable<DtoReservation> SearchForReservations(DateTime? arrivalDateFrom = null, DateTime? arrivalDateTo = null, string guestFullName = null, string guestEmail = null, string guestPhoneNumber = null)
         {
@@ -91,7 +89,7 @@ namespace HotelReservation.Bo
         #region Private Methods
         private static ExpressionStarter<DtoReservation> BuildReservationFilter(DateTime? arrivalDateFrom = null, DateTime? arrivalDateTo = null, string guestFullName = null, string guestEmail = null, string guestPhoneNumber = null)
         {
-            var predicate = PredicateBuilder.True<DtoReservation>();
+            var predicate = PredicateBuilder.New<DtoReservation>();
 
             if (arrivalDateFrom.HasValue)
                 predicate = predicate.And(r => r.ArrivalDate >= arrivalDateFrom.Value);

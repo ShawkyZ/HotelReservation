@@ -19,5 +19,6 @@ namespace HotelReservation.Data.Common
         TEntity GetById(object id);
         TEntity Insert(TEntity entity);
         void Update(TEntity entity);
+        int SaveChanges();
     }
 }

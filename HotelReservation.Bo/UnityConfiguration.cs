@@ -13,7 +13,7 @@ namespace HotelReservation.Bo
 
         public static void RegisterTypes()
         {
-            Container.RegisterType<IUnitOfWork, UnitOfWork>(new PerThreadLifetimeManager());
+           // Container.RegisterType<IUnitOfWork, UnitOfWork>(new PerThreadLifetimeManager());
             Container.RegisterType<IRepository<DtoRoom>, RoomRepository>();
             Container.RegisterType<IRepository<DtoRoomType>, RoomTypeRepository>();
             Container.RegisterType<IRepository<DtoGuest>, GuestRepository>();

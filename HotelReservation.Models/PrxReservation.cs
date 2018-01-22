@@ -4,6 +4,7 @@ namespace HotelReservation.Models
 {
     public class PrxReservation
     {
+        public string Id { get; set; }
         public string GuestName { get; set; }
         public string GuestPhone { get; set; }
         public string GuestEmail { get; set; }

@@ -1,7 +1,9 @@
 ﻿using System;
 using HotelReservation.Bo;
 using HotelReservation.Models;
+using HotelReservation.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace HotelReservation.API.Controllers
 {
@@ -10,10 +12,12 @@ namespace HotelReservation.API.Controllers
     {
         private readonly BoReservation _reservationBo;
         private readonly BoGuest _guestBo;
+        private readonly BoRoom _roomBo;
         public ReservationController()
         {
             _reservationBo = new BoReservation();
             _guestBo = new BoGuest();
+            _roomBo = new BoRoom();
         }
 
         // GET api/Reservation
@@ -33,14 +37,14 @@ namespace HotelReservation.API.Controllers
         }
 
         // GET api/Reservation/{reservationStatus}
-        [HttpGet("{reservationStatus}")]
-        public IActionResult Get(string reservationStatus)
+        [HttpGet("status/{id}")]
+        public IActionResult Get(string id)
         {
             try
             {
-                if (string.IsNullOrEmpty(reservationStatus)) return BadRequest("Reservation status can't be null");
+                if (string.IsNullOrEmpty(id)) return BadRequest("Reservation status can't be null");
 
-                var result = _reservationBo.BrowseForReservationStatus(reservationStatus);
+                var result = _reservationBo.BrowseForReservationStatus(id);
                 return Ok(result);
 
             }
@@ -73,9 +77,10 @@ namespace HotelReservation.API.Controllers
             try
             {
                 var guest = _guestBo.Create(reservationModel.GuestName, reservationModel.GuestEmail, reservationModel.GuestPhone);
-                var reservation = _reservationBo.Book(guest, reservationModel.RoomNumber, reservationModel.ArrivalDate, reservationModel.DepartureDate);
-
-                return Ok(reservation);
+                var room = _roomBo.Get(reservationModel.RoomNumber); 
+                var reservation = _reservationBo.Book(guest, room, reservationModel.ArrivalDate, reservationModel.DepartureDate);
+                reservationModel.Id = reservation.Id.ToString();
+                return Ok(reservationModel);
             }
             catch (Exception exception)
             {
@@ -89,7 +94,8 @@ namespace HotelReservation.API.Controllers
         {
             try
             {
-                _reservationBo.Cancel(id);
+                var reservation = _reservationBo.Get(id);
+                _reservationBo.Cancel(reservation);
                 return Ok();
 
             }
@@ -105,7 +111,8 @@ namespace HotelReservation.API.Controllers
         {
             try
             {
-                _reservationBo.CheckIn(id);
+                var reservation = _reservationBo.Get(id);
+                _reservationBo.CheckIn(reservation);
                 return Ok();
 
             }
@@ -121,7 +128,8 @@ namespace HotelReservation.API.Controllers
         {
             try
             {
-                _reservationBo.Checkout(id);
+                var reservation = _reservationBo.Get(id);
+                _reservationBo.Checkout(reservation);
                 return Ok();
             }
             catch (Exception exception)
