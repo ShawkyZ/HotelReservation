@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using HotelReservation.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace HotelReservation.Data.Common
@@ -17,8 +18,6 @@ namespace HotelReservation.Data.Common
             _context = new HotelContext();
             _dbSet = _context.Set<TEntity>();
         }
-
-
 
         public virtual IQueryable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, IList<Expression<Func<TEntity, object>>> includedProperties = null, int? pageIndex = null,
             int? pageSize = null)
@@ -109,6 +108,23 @@ namespace HotelReservation.Data.Common
         }
 
         public virtual void Detach(TEntity entity) => _context.Entry(entity).State = EntityState.Detached;
+
+        public int SaveChanges()
+        {
+            foreach (var entry in _context.ChangeTracker.Entries<BaseEntity>())
+            {
+                var entity = entry.Entity;
+                if (entry.State == EntityState.Added)
+                {
+                    entity.Id = Guid.NewGuid();
+                    entity.CreatedOn = DateTime.Now;
+                    entity.ModifiedOn = DateTime.Now;
+                }
+                else if (entry.State == EntityState.Modified)
+                    entity.ModifiedOn = DateTime.Now;
+            }
+            return _context.SaveChanges();
+        }
 
         public virtual void Dispose() => _context?.Dispose();
     }

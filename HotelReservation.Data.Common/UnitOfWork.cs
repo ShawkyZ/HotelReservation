@@ -4,7 +4,7 @@ using System;
 
 namespace HotelReservation.Data.Common
 {
-    public class UnitOfWork : IUnitOfWork
+    public class UnitOfWorkx : IUnitOfWorkx
     {
         #region Fields
 
@@ -13,7 +13,7 @@ namespace HotelReservation.Data.Common
         #endregion
 
         #region Constructor
-        public UnitOfWork()
+        public UnitOfWorkx()
         {
             DbContext context = new HotelContext();
             if (context == null) throw new Exception("Context cannot be null");
